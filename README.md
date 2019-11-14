@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Image Rotator:
+## Image Rotator:
 Simple React app that has a box with n x n matrix box and a button down below. Values of the matrix and the no of rotation is hard coded in App.js file. 
 It can easily be made to be passed from UI or any other source(element).
 Utils directory has matrix-rotation.js file that has the exported function for rotation.
