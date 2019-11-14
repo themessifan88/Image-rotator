@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ImageBoxContainer from './components/image-box-container';
+import { rotateMatrixClockWise } from './utils/matrix-rotation';
+import './App.scss';
 
 function App() {
+  const [matrix, setMatrix] = useState([
+    [0, 16, 255],
+    [8, 128, 32],
+    [0, 0, 0]
+  ]);
+  const noOfRotation = 1;
+  const handleClick = () => {
+    setMatrix(rotateMatrixClockWise(matrix));
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ImageBoxContainer matrix={matrix} />
+      <button className="btn-rotator" onClick={handleClick}>Rotate 90 Clockwise {noOfRotation} times</button>
     </div>
   );
 }
